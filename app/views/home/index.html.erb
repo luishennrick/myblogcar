@@ -1,0 +1,65 @@
+<body>
+
+<h1>MyBlogCars</h1>
+<h4>Os Melhores carros</h4>
+
+  <div class="gallery">
+   <% Post.all.each do |post| %>
+     <%= link_to image_tag(post.image_url.to_s), post %>
+    <% end %>
+  </div><br/>
+
+<div>
+<%= link_to "Publicações", posts_path %>
+</div>
+
+</body>
+
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
